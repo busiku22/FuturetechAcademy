@@ -1,0 +1,2750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FutureTech Academy - High-Demand ICT & Business Productivity Courses</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Corporate Colors */
+            --corporate-blue: #0066ff;
+            --corporate-blue-dark: #0052cc;
+            --corporate-red: #ff4d4d;
+            --corporate-green: #00b359;
+            --corporate-purple: #9933ff;
+
+            /* Neutral Colors */
+            --dark-color: #2d3748;
+            --light-color: #f8f9fa;
+            --text-color: #4a5568;
+            --white: #ffffff;
+            --border-color: #e2e8f0;
+            --gray-light: #edf2f7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.8), rgba(0, 153, 204, 0.8)),
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 8rem 0;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .hero h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--corporate-blue);
+            color: var(--white);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            box-shadow: 0 4px 6px rgba(0, 102, 255, 0.2);
+        }
+
+        .btn:hover {
+            background-color: var(--corporate-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 102, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: var(--corporate-purple);
+            margin-left: 1rem;
+            box-shadow: 0 4px 6px rgba(153, 51, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background-color: #8a2be2;
+            box-shadow: 0 6px 12px rgba(153, 51, 255, 0.3);
+        }
+
+        /* Courses Section */
+        .courses {
+            padding: 5rem 0;
+            text-align: center;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            color: var(--dark-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--corporate-blue), var(--corporate-purple));
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .course-item {
+            background-color: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            text-align: left;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            cursor: pointer; /* Add cursor pointer to indicate clickability */
+        }
+
+        .course-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .course-item .course-image-container {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .course-item .course-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .course-item:hover .course-image {
+            transform: scale(1.05);
+        }
+
+        .course-item .course-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-item h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .course-item p {
+            font-size: 1rem;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .course-item .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .course-item .learn-more {
+            display: inline-flex;
+            align-items: center;
+            color: var(--corporate-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .course-item .learn-more:hover {
+            color: var(--corporate-blue-dark);
+            text-decoration: underline;
+        }
+
+        .course-item .learn-more i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .course-item .learn-more:hover i {
+            transform: translateX(3px);
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: var(--white);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .course-badge.new {
+            background-color: var(--corporate-green);
+        }
+        .course-badge.hot {
+            background-color: var(--corporate-red);
+        }
+        .course-badge.popular {
+            background-color: var(--corporate-blue);
+        }
+        .course-badge.featured {
+            background-color: var(--corporate-purple);
+        }
+
+        /* Course Duration */
+        .course-duration {
+            background-color: var(--gray-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 5rem 0;
+            background-color: var(--gray-light);
+            text-align: center;
+        }
+
+        .team-slider {
+            position: relative;
+            max-width: 1000px;
+            margin: 3rem auto 0;
+            overflow: hidden;
+        }
+
+        .team-slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .team-member {
+            min-width: 100%;
+            padding: 0 1rem;
+            box-sizing: border-box;
+        }
+
+        .team-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .team-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--corporate-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .team-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-position {
+            color: var(--corporate-blue);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .team-bio {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--gray-light);
+            color: var(--dark-color);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icon:hover {
+            background-color: var(--corporate-blue);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            gap: 1rem;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--border-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            background-color: var(--corporate-blue);
+            transform: scale(1.2);
+        }
+
+        /* Call to Action */
+        .cta {
+            background: linear-gradient(135deg, var(--corporate-blue), var(--corporate-purple));
+            color: var(--white);
+            text-align: center;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .cta::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+        }
+
+        .cta h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-column h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .footer-column ul {
+            list-style-type: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--corporate-blue);
+            opacity: 1;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--corporate-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .footer-bottom a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--corporate-blue);
+        }
+
+        /* Bootstrap Modal Styles */
+        .modal-header {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .modal-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        .modal-content {
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .btn-close {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        /* Custom Modal Styles (for course details) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1050; /* Sit on top of Bootstrap modals */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0; /* Remove default padding as content handles it */
+            border: 1px solid #888;
+            width: 90%;
+            max-width: 900px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+            border-radius: 12px; /* Already defined above, but good to ensure */
+            overflow: hidden; /* Important for border-radius on children */
+        }
+
+        /* Add Animation */
+        @keyframes animatetop {
+            from {top: -300px; opacity: 0}
+            to {top: 0; opacity: 1}
+        }
+
+        .close-modal {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            z-index: 10;
+        }
+
+        .close-modal:hover,
+        .close-modal:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .course-slider .slider-header {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        .course-slider .slider-header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        .course-slider .slider-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+            padding: 20px;
+            color: white;
+        }
+
+        .course-slider .slider-overlay h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-slider .course-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .course-slider .course-tag {
+            background-color: var(--corporate-blue);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        .course-slider .slider-body {
+            padding: 30px;
+        }
+
+        .course-slider .slider-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 20px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .course-slider .tab-btn {
+            background-color: transparent;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .course-slider .tab-btn.active {
+            color: var(--corporate-blue);
+        }
+
+        .course-slider .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--corporate-blue);
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+
+        .course-slider .tab-btn:hover:not(.active) {
+            color: var(--corporate-blue-dark);
+        }
+
+        .course-slider .tab-content {
+            display: none;
+        }
+
+        .course-slider .tab-content.active {
+            display: block;
+        }
+
+        .course-details h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .course-details h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            color: var(--dark-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .course-details p {
+            margin-bottom: 1rem;
+        }
+
+        .course-details ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .course-details ul li {
+            margin-bottom: 0.5rem;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .course-details ul li::before {
+            content: '\f00c'; /* FontAwesome check icon */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: var(--corporate-green);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .instructor-profile {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: var(--gray-light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .instructor-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--corporate-blue);
+        }
+
+        .instructor-info h4 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--dark-color);
+        }
+
+        .instructor-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .testimonials {
+            margin-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+        }
+
+        .testimonial-item {
+            background-color: var(--light-color);
+            border-left: 5px solid var(--corporate-purple);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h5 {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--dark-color);
+        }
+
+        .author-info p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: var(--text-color);
+        }
+
+        .pricing-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .pricing-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .pricing-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card .price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--corporate-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-card .price span {
+            font-size: 1rem;
+            color: var(--text-color);
+            font-weight: 400;
+            display: block;
+        }
+
+        .pricing-card .course-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .pricing-card .course-features li {
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        .pricing-card .course-features i {
+            color: var(--corporate-green);
+            margin-right: 10px;
+        }
+
+        .pricing-card .enroll-btn {
+            display: block;
+            width: 100%;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--corporate-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .pricing-card .enroll-btn:hover {
+            background-color: var(--corporate-blue-dark);
+            transform: translateY(-2px);
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 6rem 0;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+                display: block;
+                margin: 1rem auto;
+                max-width: 250px;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .course-list {
+                grid-template-columns: 1fr;
+            }
+
+            .team-img {
+                width: 120px;
+                height: 120px;
+            }
+
+            .team-name {
+                font-size: 1.3rem;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+
+            .cta p {
+                font-size: 1rem;
+            }
+
+            .modal-content {
+                width: 95%;
+            }
+
+            .course-slider .slider-overlay h2 {
+                font-size: 1.8rem;
+            }
+
+            .course-details h3 {
+                font-size: 1.5rem;
+            }
+
+            .course-details h4 {
+                font-size: 1.2rem;
+            }
+
+            .pricing-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .course-item h3 {
+                font-size: 1.3rem;
+            }
+
+            .cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .team-card {
+                padding: 1.5rem;
+            }
+
+            .course-slider .slider-overlay h2 {
+                font-size: 1.5rem;
+            }
+
+            .course-slider .tab-btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+
+            .pricing-card h4 {
+                font-size: 1.5rem;
+            }
+
+            .pricing-card .price {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>FutureTech Academy</h1>
+            <p>Your Gateway to High-Demand ICT & Business Productivity Skills</p>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Unlock Your Tech & Professional Potential</h2>
+            <p>Master the most sought-after ICT and essential Microsoft Office skills to propel your career forward with our expert-led short courses.</p>
+            <a href="#courses" class="btn">Explore Courses</a>
+            <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#registrationModal">Register Now</button>
+        </div>
+    </section>
+
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 class="section-title">Our High-Demand Short Courses</h2>
+            <p class="section-subtitle">Choose from our carefully curated selection of industry-relevant courses designed to boost your career</p>
+
+            <div class="course-list">
+                <div class="course-item" onclick="openCourseModal('excel')">
+                    <span class="course-badge new">New</span>
+                    <div class="course-image-container">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Advanced Microsoft Excel course" class="course-image">
+                    </div>
+                    <div class="course-content">
+                        <h3>Advanced Microsoft Excel</h3>
+                        <p>Go beyond the basics. Master complex formulas, dynamic pivot tables, advanced data analysis tools, and powerful automation with VBA.</p>
+                        <div class="course-meta">
+                            <div class="course-duration">4 Weeks</div>
+                            <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item" onclick="openCourseModal('powerpoint')">
+                    <span class="course-badge featured">Featured</span>
+                    <div class="course-image-container">
+                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Effective Microsoft PowerPoint course" class="course-image">
+                    </div>
+                    <div class="course-content">
+                        <h3>Effective PowerPoint</h3>
+                        <p>Craft visually stunning presentations with advanced design principles, animations, and persuasive storytelling techniques.</p>
+                        <div class="course-meta">
+                            <div class="course-duration">3 Weeks</div>
+                            <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item" onclick="openCourseModal('cybersecurity')">
+                    <span class="course-badge hot">Hot</span>
+                    <div class="course-image-container">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cybersecurity & Ethical Hacking course" class="course-image">
+                    </div>
+                    <div class="course-content">
+                        <h3>Cybersecurity</h3>
+                        <p>Protect digital assets with network security, vulnerability assessment, and ethical hacking techniques.</p>
+                        <div class="course-meta">
+                            <div class="course-duration">6 Weeks</div>
+                            <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="course-item" onclick="openCourseModal('ai-ml')">
+                    <div class="course-image-container">
+                        <img src="https://images.unsplash.com/photo-1677442135136-760c813a743a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Artificial Intelligence & Machine Learning course" class="course-image">
+                    </div>
+                    <div class="course-content">
+                        <h3>AI & Machine Learning</h3>
+                        <p>Explore algorithms, build predictive models, and implement AI solutions across various industries.</p>
+                        <div class="course-meta">
+                            <div class="course-duration">8 Weeks</div>
+                            <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-item" onclick="openCourseModal('data-science')">
+                    <div class="course-image-container">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Data Science & Analytics course" class="course-image">
+                    </div>
+                    <div class="course-content">
+                        <h3>Data Science</h3>
+                        <p>Master data collection, cleaning, analysis, and visualization techniques using industry-standard tools.</p>
+                        <div class="course-meta">
+                            <div class="course-duration">8 Weeks</div>
+                            <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-item" onclick="openCourseModal('cloud-computing')">
+                    <span class="course-badge popular">Popular</span>
+                    <div class="course-image-container">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Cloud Computing Essentials course" class="course-image">
+                    </div>
+                    <div class="course-content">
+                        <h3>Cloud Computing</h3>
+                        <p>Gain practical skills in cloud services and infrastructure deployment on AWS and Azure platforms.</p>
+                        <div class="course-meta">
+                            <div class="course-duration">6 Weeks</div>
+                            <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-item" onclick="openCourseModal('web-dev')">
+                    <div class="course-image-container">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" alt="Web Development course" class="course-image">
+                    </div>
+                    <div class="course-content">
+                        <h3>Web Development</h3>
+                        <p>Master HTML, CSS, JavaScript for frontend and server-side programming for backend functionality.</p>
+                        <div class="course-meta">
+                            <div class="course-duration">10 Weeks</div>
+                            <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="course-item" onclick="openCourseModal('digital-marketing')">
+                    <div class="course-image-container">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Digital Marketing Strategist course" class="course-image">
+                    </div>
+                    <div class="course-content">
+                        <h3>Digital Marketing</h3>
+                        <p>Master SEO, SEM, social media marketing, content creation, and analytics for digital campaigns.</p>
+                        <div class="course-meta">
+                            <div class="course-duration">6 Weeks</div>
+                            <a href="#" class="learn-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title">Meet Our Team</h2>
+            <p class="text-center mb-5">The passionate professionals behind FutureTech Academy</p>
+
+            <div class="team-slider">
+                <div class="team-slides">
+                    <div class="team-member">
+                        <div class="team-card">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Engr Busiku Kapikanya" class="team-img">
+                            <h3 class="team-name">Engr Busiku Kapikanya</h3>
+                            <p class="team-position">Founder</p>
+                            <p class="team-bio">Visionary leader with 15+ years in technology education and entrepreneurship. Founded FutureTech Academy to bridge the digital skills gap in Africa.</p>
+                            <div class="team-social">
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-card">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Madura Ngoma" class="team-img">
+                            <h3 class="team-name">Madura Ngoma</h3>
+                            <p class="team-position">Information Security/Projects Manager</p>
+                            <p class="team-bio">Certified cybersecurity expert with extensive experience in implementing secure systems and managing complex IT projects.</p>
+                            <div class="team-social">
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-card">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Edward Chongo" class="team-img">
+                            <h3 class="team-name">Edward Chongo</h3>
+                            <p class="team-position">Graphics Designer</p>
+                            <p class="team-bio">Creative professional with a keen eye for visual communication and brand identity development across digital platforms.</p>
+                            <div class="team-social">
+                                <a href="#" class="social-icon"><i class="fab fa-behance"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-dribbble"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-card">
+                            <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Saliya Ngoma" class="team-img">
+                            <h3 class="team-name">Saliya Ngoma</h3>
+                            <p class="team-position">Senior Accounting Officer</p>
+                            <p class="team-bio">Financial management expert ensuring the academy's sustainable growth and proper resource allocation.</p>
+                            <div class="team-social">
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-card">
+                            <img src="https://randomuser.me/api/portraits/women/63.jpg" alt="Memory Kafwilo" class="team-img">
+                            <h3 class="team-name">Memory Kafwilo</h3>
+                            <p class="team-position">Course Manager</p>
+                            <p class="team-bio">Education specialist overseeing curriculum development and ensuring high-quality learning experiences.</p>
+                            <div class="team-social">
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="team-card">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Mweemba Ngoma" class="team-img">
+                            <h3 class="team-name">Mweemba Ngoma</h3>
+                            <p class="team-position">Marketing Manager</p>
+                            <p class="team-bio">Digital marketing strategist driving brand awareness and student enrollment through innovative campaigns.</p>
+                            <div class="team-social">
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-nav">
+                    <div class="slider-dot active" data-slide="0"></div>
+                    <div class="slider-dot" data-slide="1"></div>
+                    <div class="slider-dot" data-slide="2"></div>
+                    <div class="slider-dot" data-slide="3"></div>
+                    <div class="slider-dot" data-slide="4"></div>
+                    <div class="slider-dot" data-slide="5"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Invest in Your Future?</h2>
+            <p>Our short ICT and Business Productivity courses are designed for maximum impact and immediate career benefits. Enroll today and join the tech revolution!</p>
+            <button class="btn" data-bs-toggle="modal" data-bs-target="#registrationModal">Register Now</button>
+        </div>
+    </section>
+
+    <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-5">
+                    <h2 class="modal-title text-center mb-4" id="registrationModalLabel">Course Registration</h2>
+                    <form id="courseRegistrationForm">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="First Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" placeholder="Phone Number">
+                        </div>
+
+                        <div class="mb-3">
+                            <select class="form-select" required>
+                                <option value="" disabled selected>Select a Course</option>
+                                <option>Advanced Microsoft Excel</option>
+                                <option>Effective Microsoft PowerPoint</option>
+                                <option>Cybersecurity & Ethical Hacking</option>
+                                <option>Artificial Intelligence (AI) & Machine Learning (ML)</option>
+                                <option>Data Science & Analytics</option>
+                                <option>Cloud Computing Essentials (AWS/Azure)</option>
+                                <option>Web Development (Frontend & Backend)</option>
+                                <option>Digital Marketing Strategist</option>
+                                <option>Mobile App Development (Android/iOS)</option>
+                                <option>UI/UX Design Masterclass</option>
+                                <option>DevOps Fundamentals</option>
+                                <option>Python Programming Essentials</option>
+                                <option>Network Administration & Security</option>
+                                <option>Blockchain Technology Fundamentals</option>
+                                <option>Internet of Things (IoT) Development</option>
+                                <option>Big Data Analytics with Hadoop</option>
+                                <option>Advanced SQL & Database Management</option>
+                                <option>IT Project Management</option>
+                                <option>Microsoft Power BI for Data Visualization</option>
+                                <option>Advanced JavaScript & React.js</option>
+                                <option>Game Development with Unity</option>
+                                <option>Ruby on Rails Web Development</option>
+                                <option>Linux System Administration</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <select class="form-select">
+                                <option value="" disabled selected>Preferred Learning Mode</option>
+                                <option>Online Live Classes</option>
+                                <option>In-Person Training</option>
+                                <option>Self-Paced Online</option>
+                                <option>Hybrid (Online + In-Person)</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <textarea class="form-control" rows="3" placeholder="Any additional information or questions"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-3">Submit Registration</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="excel-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('excel-modal')">&times;</span>
+            <div class="course-slider">
+                <div class="slider-header">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Advanced Excel" class="slider-header-image">
+                    <div class="slider-overlay">
+                        <h2>Advanced Microsoft Excel</h2>
+                        <div class="course-tags">
+                            <span class="course-tag">Business</span>
+                            <span class="course-tag">Data Analysis</span>
+                            <span class="course-tag">Productivity</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-body">
+                    <div class="slider-tabs">
+                        <button class="tab-btn active" onclick="openTab(event, 'excel-overview')">Overview</button>
+                        <button class="tab-btn" onclick="openTab(event, 'excel-curriculum')">Curriculum</button>
+                        <button class="tab-btn" onclick="openTab(event, 'excel-instructor')">Instructor</button>
+                        <button class="tab-btn" onclick="openTab(event, 'excel-pricing')">Pricing</button>
+                    </div>
+                    <div id="excel-overview" class="tab-content active">
+                        <div class="course-details">
+                            <h3>Master Data Analysis with Advanced Excel</h3>
+                            <p>This comprehensive course takes you beyond basic spreadsheet management to unlock the full potential of Microsoft Excel. Designed for professionals who work with data regularly, you'll learn to transform raw data into powerful business insights through advanced techniques and automation.</p>
+                            <h4>What You'll Achieve</h4>
+                            <ul>
+                                <li>Automate repetitive tasks and complex calculations with advanced formulas and VBA scripting</li>
+                                <li>Create dynamic dashboards that update automatically with new data</li>
+                                <li>Master data modeling techniques to analyze relationships between different data sets</li>
+                                <li>Implement advanced data visualization techniques to communicate insights effectively</li>
+                                <li>Develop custom solutions for your specific business needs</li>
+                            </ul>
+                            <div class="instructor-profile">
+                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Instructor" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h4>Dr. Sarah Johnson</h4>
+                                    <p>Data Analysis Expert with 15+ years experience teaching Excel to Fortune 500 companies</p>
+                                </div>
+                            </div>
+                            <div class="testimonials">
+                                <h4>What Our Students Say</h4>
+                                <div class="testimonial-item">
+                                    <p class="testimonial-content">"This course transformed how I work with data. I've automated reports that used to take me hours, and my dashboards now impress senior management. Best investment in my career!"</p>
+                                    <div class="testimonial-author">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Student">
+                                        <div class="author-info">
+                                            <h5>Michael Rodriguez</h5>
+                                            <p>Financial Analyst, TechCorp</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="excel-curriculum" class="tab-content">
+                        <div class="course-details">
+                            <h3>Course Curriculum</h3>
+                            <p>Our 4-week intensive program covers everything from advanced formulas to automation with VBA. Each week includes hands-on projects to reinforce your learning.</p>
+                            <h4>Week 1: Advanced Formulas & Functions</h4>
+                            <ul>
+                                <li>Master INDEX/MATCH combinations for flexible lookups</li>
+                                <li>Implement array formulas for complex calculations</li>
+                                <li>Use logical functions (IF, AND, OR) for decision-making models</li>
+                                <li>Text manipulation functions for data cleaning</li>
+                                <li>Date and time calculations for project tracking</li>
+                            </ul>
+                            <h4>Week 2: Data Analysis & Visualization</h4>
+                            <ul>
+                                <li>Advanced PivotTable techniques for data summarization</li>
+                                <li>Creating interactive dashboards with slicers and timelines</li>
+                                <li>Conditional formatting for visual data analysis</li>
+                                <li>Introduction to Power Query for data transformation</li>
+                                <li>Building interactive charts and graphs</li>
+                            </ul>
+                            <h4>Week 3: Automation with VBA</h4>
+                            <ul>
+                                <li>Understanding VBA basics and the Developer tab</li>
+                                <li>Writing and editing macros for repetitive tasks</li>
+                                <li>Automating data entry and report generation</li>
+                                <li>User-defined functions (UDFs)</li>
+                                <li>Error handling in VBA</li>
+                            </ul>
+                            <h4>Week 4: Advanced Topics & Case Studies</h4>
+                            <ul>
+                                <li>Data validation and protection techniques</li>
+                                <li>Working with external data sources</li>
+                                <li>Advanced Goal Seek, Solver, and Scenario Manager</li>
+                                <li>Case studies: Financial modeling, sales forecasting, inventory management</li>
+                                <li>Best practices for efficient and scalable Excel models</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="excel-instructor" class="tab-content">
+                        <div class="course-details">
+                            <h3>Meet Your Instructor</h3>
+                            <div class="instructor-profile">
+                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Instructor" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h4>Dr. Sarah Johnson</h4>
+                                    <p>Data Analysis Expert with 15+ years experience teaching Excel to Fortune 500 companies</p>
+                                </div>
+                            </div>
+                            <p style="margin-top: 1.5rem;">Dr. Sarah Johnson is a distinguished data analysis expert with over 15 years of experience in simplifying complex data challenges for major corporations. She holds a Ph.D. in Business Analytics and has trained thousands of professionals globally, empowering them to leverage Excel for advanced insights and increased productivity. Her teaching methodology focuses on practical, real-world application, ensuring students can immediately apply their new skills.</p>
+                            <p>Sarah is passionate about demystifying data and making powerful analytical tools accessible to everyone. She believes that a strong command of Excel is foundational for success in today's data-driven world.</p>
+                        </div>
+                    </div>
+                    <div id="excel-pricing" class="tab-content">
+                        <div class="course-details">
+                            <h3>Pricing for Advanced Microsoft Excel</h3>
+                            <div class="pricing-section">
+                                <div class="pricing-card">
+                                    <h4>Standard Access</h4>
+                                    <div class="price">$497 <span>one-time payment</span></div>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-check"></i> 4 Weeks Live Online Sessions</li>
+                                        <li><i class="fas fa-check"></i> Access to all course materials & recordings</li>
+                                        <li><i class="fas fa-check"></i> Practical exercises & case studies</li>
+                                        <li><i class="fas fa-check"></i> Certificate of Completion</li>
+                                        <li><i class="fas fa-check"></i> Email support</li>
+                                    </ul>
+                                    <button class="enroll-btn">Enroll Now</button>
+                                </div>
+
+                                <div class="pricing-card" style="border: 2px solid var(--corporate-blue);">
+                                    <h4>Premium Package</h4>
+                                    <div class="price">$697 <span>one-time payment</span></div>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-check"></i> Everything in Standard Access</li>
+                                        <li><i class="fas fa-check"></i> 2x 1-on-1 coaching sessions with instructor</li>
+                                        <li><i class="fas fa-check"></i> Priority email support</li>
+                                        <li><i class="fas fa-check"></i> Lifetime access to course updates</li>
+                                        <li><i class="fas fa-check"></i> Exclusive access to advanced Excel template library</li>
+                                    </ul>
+                                    <button class="enroll-btn">Enroll Now</button>
+                                </div>
+                            </div>
+                            <p style="text-align: center; margin-top: 1rem;">Nonprofit and small business discounts available. <a href="#">Contact us</a> for details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="powerpoint-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('powerpoint-modal')">&times;</span>
+            <div class="course-slider">
+                <div class="slider-header">
+                    <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Effective PowerPoint" class="slider-header-image">
+                    <div class="slider-overlay">
+                        <h2>Effective Microsoft PowerPoint</h2>
+                        <div class="course-tags">
+                            <span class="course-tag">Presentation</span>
+                            <span class="course-tag">Design</span>
+                            <span class="course-tag">Communication</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-body">
+                    <div class="slider-tabs">
+                        <button class="tab-btn active" onclick="openTab(event, 'powerpoint-overview')">Overview</button>
+                        <button class="tab-btn" onclick="openTab(event, 'powerpoint-curriculum')">Curriculum</button>
+                        <button class="tab-btn" onclick="openTab(event, 'powerpoint-instructor')">Instructor</button>
+                        <button class="tab-btn" onclick="openTab(event, 'powerpoint-pricing')">Pricing</button>
+                    </div>
+                    <div id="powerpoint-overview" class="tab-content active">
+                        <div class="course-details">
+                            <h3>Craft Visually Stunning & Persuasive Presentations</h3>
+                            <p>This course goes beyond basic slide creation, teaching you how to design impactful presentations that engage your audience and effectively convey your message. Learn advanced design principles, animation techniques, and storytelling strategies to become a presentation master.</p>
+                            <h4>What You'll Achieve</h4>
+                            <ul>
+                                <li>Design professional and visually appealing slides</li>
+                                <li>Utilize advanced animation and transition effects effectively</li>
+                                <li>Implement storytelling techniques to make your presentations memorable</li>
+                                <li>Master data visualization within PowerPoint</li>
+                                <li>Deliver compelling and persuasive presentations</li>
+                            </ul>
+                            <div class="instructor-profile">
+                                <img src="https://randomuser.me/api/portraits/men/40.jpg" alt="Instructor" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h4>Prof. David Chen</h4>
+                                    <p>Presentation Design Specialist with 10+ years experience in corporate training</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="powerpoint-curriculum" class="tab-content">
+                        <div class="course-details">
+                            <h3>Course Curriculum</h3>
+                            <p>Our 3-week program focuses on practical skills to elevate your PowerPoint presentations. Each week includes hands-on exercises and opportunities for feedback.</p>
+                            <h4>Week 1: Design Principles & Visual Hierarchy</h4>
+                            <ul>
+                                <li>Understanding effective slide layout and composition</li>
+                                <li>Using color psychology and typography</li>
+                                <li>Mastering image and icon usage</li>
+                                <li>Creating custom themes and templates</li>
+                                <li>Infographics and data visualization basics</li>
+                            </ul>
+                            <h4>Week 2: Advanced Features & Interactivity</h4>
+                            <ul>
+                                <li>Working with Master Slides for consistency</li>
+                                <li>Advanced animation and transition effects</li>
+                                <li>Embedding multimedia (video, audio)</li>
+                                <li>Creating interactive elements with hyperlinks and action buttons</li>
+                                <li>Using SmartArt and chart tools effectively</li>
+                            </ul>
+                            <h4>Week 3: Storytelling & Delivery</h4>
+                            <ul>
+                                <li>Structuring your message for maximum impact</li>
+                                <li>Techniques for persuasive communication</li>
+                                <li>Rehearsing and delivering with confidence</li>
+                                <li>Handling Q&A sessions effectively</li>
+                                <li>Tips for virtual presentations</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="powerpoint-instructor" class="tab-content">
+                        <div class="course-details">
+                            <h3>Meet Your Instructor</h3>
+                            <div class="instructor-profile">
+                                <img src="https://randomuser.me/api/portraits/men/40.jpg" alt="Instructor" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h4>Prof. David Chen</h4>
+                                    <p>Presentation Design Specialist with 10+ years experience in corporate training</p>
+                                </div>
+                            </div>
+                            <p style="margin-top: 1.5rem;">Prof. David Chen is a renowned presentation design specialist with a decade of experience transforming ordinary presentations into extraordinary experiences. With a background in graphic design and corporate communications, David has a unique ability to blend aesthetics with compelling messaging. He has worked with numerous companies, from startups to multinational corporations, helping their teams create and deliver impactful presentations.</p>
+                            <p>David's engaging teaching style emphasizes practical application and creative problem-solving. He is committed to equipping his students with the skills to confidently and effectively communicate their ideas through powerful visual narratives.</p>
+                        </div>
+                    </div>
+                    <div id="powerpoint-pricing" class="tab-content">
+                        <div class="course-details">
+                            <h3>Pricing for Effective Microsoft PowerPoint</h3>
+                            <div class="pricing-section">
+                                <div class="pricing-card">
+                                    <h4>Standard Access</h4>
+                                    <div class="price">$397 <span>one-time payment</span></div>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-check"></i> 3 Weeks Live Online Sessions</li>
+                                        <li><i class="fas fa-check"></i> Access to all course materials & recordings</li>
+                                        <li><i class="fas fa-check"></i> Practical design exercises</li>
+                                        <li><i class="fas fa-check"></i> Certificate of Completion</li>
+                                        <li><i class="fas fa-check"></i> Email support</li>
+                                    </ul>
+                                    <button class="enroll-btn">Enroll Now</button>
+                                </div>
+
+                                <div class="pricing-card" style="border: 2px solid var(--corporate-blue);">
+                                    <h4>Premium Package</h4>
+                                    <div class="price">$547 <span>one-time payment</span></div>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-check"></i> Everything in Standard Access</li>
+                                        <li><i class="fas fa-check"></i> 1x 1-on-1 presentation review session</li>
+                                        <li><i class="fas fa-check"></i> Priority email support</li>
+                                        <li><i class="fas fa-check"></i> Lifetime access to course updates</li>
+                                        <li><i class="fas fa-check"></i> Exclusive template library</li>
+                                    </ul>
+                                    <button class="enroll-btn">Enroll Now</button>
+                                </div>
+                            </div>
+                            <p style="text-align: center; margin-top: 1rem;">Nonprofit and small business discounts available. <a href="#">Contact us</a> for details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cybersecurity-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('cybersecurity-modal')">&times;</span>
+            <div class="course-slider">
+                <div class="slider-header">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cybersecurity & Ethical Hacking" class="slider-header-image">
+                    <div class="slider-overlay">
+                        <h2>Cybersecurity & Ethical Hacking</h2>
+                        <div class="course-tags">
+                            <span class="course-tag">Security</span>
+                            <span class="course-tag">Hacking</span>
+                            <span class="course-tag">IT</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-body">
+                    <div class="slider-tabs">
+                        <button class="tab-btn active" onclick="openTab(event, 'cybersecurity-overview')">Overview</button>
+                        <button class="tab-btn" onclick="openTab(event, 'cybersecurity-curriculum')">Curriculum</button>
+                        <button class="tab-btn" onclick="openTab(event, 'cybersecurity-instructor')">Instructor</button>
+                        <button class="tab-btn" onclick="openTab(event, 'cybersecurity-pricing')">Pricing</button>
+                    </div>
+                    <div id="cybersecurity-overview" class="tab-content active">
+                        <div class="course-details">
+                            <h3>Protect Digital Assets & Master Ethical Hacking</h3>
+                            <p>This intensive course provides a deep dive into the world of cybersecurity, equipping you with the knowledge and practical skills to protect information systems from various threats. Learn network security, vulnerability assessment, ethical hacking methodologies, and incident response.</p>
+                            <h4>What You'll Achieve</h4>
+                            <ul>
+                                <li>Understand common cyber threats and attack vectors</li>
+                                <li>Implement robust network security measures</li>
+                                <li>Conduct vulnerability assessments and penetration testing</li>
+                                <li>Develop skills in ethical hacking techniques</li>
+                                <li>Formulate incident response plans to mitigate breaches</li>
+                            </ul>
+                            <div class="instructor-profile">
+                                <img src="https://randomuser.me/api/portraits/men/50.jpg" alt="Instructor" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h4>Dr. Alex Foster</h4>
+                                    <p>Certified Ethical Hacker & Cybersecurity Consultant with 12+ years experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cybersecurity-curriculum" class="tab-content">
+                        <div class="course-details">
+                            <h3>Course Curriculum</h3>
+                            <p>Our 6-week intensive program covers key cybersecurity domains with a strong emphasis on hands-on labs and real-world scenarios.</p>
+                            <h4>Week 1: Introduction to Cybersecurity & Threat Landscape</h4>
+                            <ul>
+                                <li>Fundamentals of information security</li>
+                                <li>Common cyber threats (malware, phishing, ransomware)</li>
+                                <li>Security principles (Confidentiality, Integrity, Availability)</li>
+                                <li>Legal and ethical considerations in cybersecurity</li>
+                                <li>Introduction to security frameworks (NIST, ISO 27001)</li>
+                            </ul>
+                            <h4>Week 2: Network Security & Cryptography</h4>
+                            <ul>
+                                <li>Network protocols and security challenges</li>
+                                <li>Firewalls, IDS/IPS, VPNs</li>
+                                <li>Fundamentals of cryptography (symmetric, asymmetric, hashing)</li>
+                                <li>Public Key Infrastructure (PKI)</li>
+                                <li>Wireless network security</li>
+                            </ul>
+                            <h4>Week 3: System & Application Security</h4>
+                            <ul>
+                                <li>Operating system security (Windows, Linux hardening)</li>
+                                <li>Application security vulnerabilities (OWASP Top 10)</li>
+                                <li>Secure coding principles</li>
+                                <li>Database security</li>
+                                <li>Cloud security fundamentals</li>
+                            </ul>
+                            <h4>Week 4: Ethical Hacking & Penetration Testing Basics</h4>
+                            <ul>
+                                <li>Introduction to ethical hacking methodologies</li>
+                                <li>Footprinting and reconnaissance</li>
+                                <li>Scanning networks (Nmap)</li>
+                                <li>Vulnerability analysis (Nessus, OpenVAS)</li>
+                                <li>Introduction to Metasploit</li>
+                            </ul>
+                            <h4>Week 5: Advanced Hacking Techniques & Exploitation</h4>
+                            <ul>
+                                <li>System hacking (password attacks, privilege escalation)</li>
+                                <li>Malware analysis basics</li>
+                                <li>Web application hacking</li>
+                                <li>Social engineering tactics</li>
+                                <li>Evading IDS/IPS and firewalls</li>
+                            </ul>
+                            <h4>Week 6: Incident Response & Digital Forensics</h4>
+                            <ul>
+                                <li>Incident response lifecycle</li>
+                                <li>Containment, eradication, and recovery strategies</li>
+                                <li>Introduction to digital forensics</li>
+                                <li>Collecting and preserving evidence</li>
+                                <li>Reporting and documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="cybersecurity-instructor" class="tab-content">
+                        <div class="course-details">
+                            <h3>Meet Your Instructor</h3>
+                            <div class="instructor-profile">
+                                <img src="https://randomuser.me/api/portraits/men/50.jpg" alt="Instructor" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h4>Dr. Alex Foster</h4>
+                                    <p>Certified Ethical Hacker & Cybersecurity Consultant with 12+ years experience</p>
+                                </div>
+                            </div>
+                            <p style="margin-top: 1.5rem;">Dr. Alex Foster is a leading cybersecurity expert and a Certified Ethical Hacker (CEH) with over 12 years of experience in safeguarding critical information infrastructures. He holds a Ph.D. in Computer Science with a specialization in Network Security. Alex has advised numerous government agencies and Fortune 500 companies on their cybersecurity strategies, conducting penetration tests and developing robust security architectures.</p>
+                            <p>Known for his dynamic teaching style, Alex brings real-world case studies and hands-on labs to the classroom, making complex security concepts accessible and engaging. He is committed to nurturing the next generation of cybersecurity professionals.</p>
+                        </div>
+                    </div>
+                    <div id="cybersecurity-pricing" class="tab-content">
+                        <div class="course-details">
+                            <h3>Pricing for Cybersecurity & Ethical Hacking</h3>
+                            <div class="pricing-section">
+                                <div class="pricing-card">
+                                    <h4>Standard Access</h4>
+                                    <div class="price">$797 <span>one-time payment</span></div>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-check"></i> 6 Weeks Live Online Sessions</li>
+                                        <li><i class="fas fa-check"></i> Access to all course materials & labs</li>
+                                        <li><i class="fas fa-check"></i> Hands-on ethical hacking exercises</li>
+                                        <li><i class="fas fa-check"></i> Certificate of Completion</li>
+                                        <li><i class="fas fa-check"></i> Email support</li>
+                                    </ul>
+                                    <button class="enroll-btn">Enroll Now</button>
+                                </div>
+
+                                <div class="pricing-card" style="border: 2px solid var(--corporate-blue);">
+                                    <h4>Agency Track</h4>
+                                    <div class="price">$997 <span>one-time payment</span></div>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-check"></i> Everything in Standard Access</li>
+                                        <li><i class="fas fa-check"></i> 3x 1-on-1 mentorship sessions</li>
+                                        <li><i class="fas fa-check"></i> Dedicated priority support</li>
+                                        <li><i class="fas fa-check"></i> Lifetime access to course updates & new labs</li>
+                                        <li><i class="fas fa-check"></i> Access to private cybersecurity community forum</li>
+                                    </ul>
+                                    <button class="enroll-btn">Enroll Now</button>
+                                </div>
+                            </div>
+                            <p style="text-align: center; margin-top: 1rem;">Nonprofit and small business discounts available. <a href="#">Contact us</a> for details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ai-ml-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('ai-ml-modal')">&times;</span>
+            <div class="course-slider">
+                <div class="slider-header">
+                    <img src="https://images.unsplash.com/photo-1677442135136-760c813a743a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Artificial Intelligence & Machine Learning" class="slider-header-image">
+                    <div class="slider-overlay">
+                        <h2>Artificial Intelligence & Machine Learning</h2>
+                        <div class="course-tags">
+                            <span class="course-tag">AI</span>
+                            <span class="course-tag">Machine Learning</span>
+                            <span class="course-tag">Deep Learning</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-body">
+                    <div class="slider-tabs">
+                        <button class="tab-btn active" onclick="openTab(event, 'ai-ml-overview')">Overview</button>
+                        <button class="tab-btn" onclick="openTab(event, 'ai-ml-curriculum')">Curriculum</button>
+                        <button class="tab-btn" onclick="openTab(event, 'ai-ml-instructor')">Instructor</button>
+                        <button class="tab-btn" onclick="openTab(event, 'ai-ml-pricing')">Pricing</button>
+                    </div>
+                    <div id="ai-ml-overview" class="tab-content active">
+                        <div class="course-details">
+                            <h3>Explore Algorithms, Build Predictive Models, & Implement AI Solutions</h3>
+                            <p>Dive into the fascinating world of Artificial Intelligence and Machine Learning. This course covers fundamental concepts, popular algorithms, and practical applications, enabling you to build intelligent systems and make data-driven predictions.</p>
+                            <h4>What You'll Achieve</h4>
+                            <ul>
+                                <li>Understand core AI and ML concepts, including supervised and unsupervised learning</li>
+                                <li>Implement various machine learning algorithms (e.g., Regression, Classification, Clustering)</li>
+                                <li>Develop predictive models for real-world problems</li>
+                                <li>Gain hands-on experience with popular ML libraries (Scikit-learn, TensorFlow, Keras)</li>
+                                <li>Apply AI techniques to solve business challenges</li>
+                            </ul>
+                            <div class="instructor-profile">
+                                <img src="https://randomuser.me/api/portraits/men/60.jpg" alt="Instructor" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h4>Dr. Lena Petrova</h4>
+                                    <p>AI/ML Research Scientist & Educator with 8+ years experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ai-ml-curriculum" class="tab-content">
+                        <div class="course-details">
+                            <h3>Course Curriculum</h3>
+                            <p>Our 8-week immersive program blends theoretical foundations with practical coding exercises in Python. Each week culminates in a project to solidify your understanding.</p>
+                            <h4>Week 1: Introduction to AI & Python for ML</h4>
+                            <ul>
+                                <li>What is AI, ML, and Deep Learning?</li>
+                                <li>Setting up your development environment (Anaconda, Jupyter Notebooks)</li>
+                                <li>Python essentials for data science (Numpy, Pandas)</li>
+                                <li>Data collection and preprocessing</li>
+                            </ul>
+                            <h4>Week 2: Supervised Learning - Regression</h4>
+                            <ul>
+                                <li>Linear Regression and its applications</li>
+                                <li>Polynomial Regression</li>
+                                <li>Model evaluation metrics (MAE, MSE, R-squared)</li>
+                                <li>Overfitting and underfitting</li>
+                            </ul>
+                            <h4>Week 3: Supervised Learning - Classification</h4>
+                            <ul>
+                                <li>Logistic Regression, K-Nearest Neighbors</li>
+                                <li>Support Vector Machines (SVM)</li>
+                                <li>Decision Trees and Random Forests</li>
+                                <li>Evaluation metrics (Accuracy, Precision, Recall, F1-score, Confusion Matrix)</li>
+                            </ul>
+                            <h4>Week 4: Unsupervised Learning & Clustering</h4>
+                            <ul>
+                                <li>K-Means Clustering</li>
+                                <li>Hierarchical Clustering</li>
+                                <li>DBSCAN</li>
+                                <li>Principal Component Analysis (PCA) for dimensionality reduction</li>
+                            </ul>
+                            <h4>Week 5: Neural Networks & Deep Learning Fundamentals</h4>
+                            <ul>
+                                <li>Introduction to Artificial Neural Networks (ANNs)</li>
+                                <li>Perceptrons and activation functions</li>
+                                <li>Backpropagation algorithm</li>
+                                <li>Building simple neural networks with Keras/TensorFlow</li>
+                            </ul>
+                            <h4>Week 6: Convolutional Neural Networks (CNNs)</h4>
+                            <ul>
+                                <li>Image recognition and computer vision basics</li>
+                                <li>CNN architecture (Convolutional layers, Pooling layers)</li>
+                                <li>Building and training CNNs for image classification</li>
+                                <li>Transfer learning</li>
+                            </ul>
+                            <h4>Week 7: Recurrent Neural Networks (RNNs) & NLP Basics</h4>
+                            <ul>
+                                <li>Introduction to sequence data</li>
+                                <li>RNNs, LSTMs, and GRUs</li>
+                                <li>Natural Language Processing (NLP) fundamentals</li>
+                                <li>Text preprocessing and embedding</li>
+                                <li>Sentiment analysis with RNNs</li>
+                            </ul>
+                            <h4>Week 8: Reinforcement Learning & Ethical AI</h4>
+                            <ul>
+                                <li>Introduction to Reinforcement Learning (RL) concepts</li>
+                                <li>Q-learning and Policy Gradient methods</li>
+                                <li>Bias in AI and fairness</li>
+                                <li>Privacy and security in AI systems</li>
+                                <li>Future trends in AI</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="ai-ml-instructor" class="tab-content">
+                        <div class="course-details">
+                            <h3>Meet Your Instructor</h3>
+                            <div class="instructor-profile">
+                                <img src="https://randomuser.me/api/portraits/men/60.jpg" alt="Instructor" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h4>Dr. Lena Petrova</h4>
+                                    <p>AI/ML Research Scientist & Educator with 8+ years experience</p>
+                                </div>
+                            </div>
+                            <p style="margin-top: 1.5rem;">Dr. Lena Petrova is a distinguished AI and Machine Learning Research Scientist with over 8 years of experience at leading tech companies and academic institutions. She holds a Ph.D. in Artificial Intelligence and specializes in developing cutting-edge algorithms for predictive analytics and natural language processing. Lena has published numerous papers in top-tier AI conferences and is passionate about sharing her expertise.</p>
+                            <p>Her teaching approach combines rigorous theoretical understanding with practical, hands-on coding, ensuring students are well-equipped to tackle real-world AI challenges. Lena is dedicated to fostering a deep understanding and a passion for innovation in her students.</p>
+                        </div>
+                    </div>
+                    <div id="ai-ml-pricing" class="tab-content">
+                        <div class="course-details">
+                            <h3>Pricing for Artificial Intelligence & Machine Learning</h3>
+                            <div class="pricing-section">
+                                <div class="pricing-card">
+                                    <h4>Standard Access</h4>
+                                    <div class="price">$897 <span>one-time payment</span></div>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-check"></i> 8 Weeks Live Online Sessions</li>
+                                        <li><i class="fas fa-check"></i> Access to all course materials & code labs</li>
+                                        <li><i class="fas fa-check"></i> Weekly coding assignments & projects</li>
+                                        <li><i class="fas fa-check"></i> Certificate of Completion</li>
+                                        <li><i class="fas fa-check"></i> Email support</li>
+                                    </ul>
+                                    <button class="enroll-btn">Enroll Now</button>
+                                </div>
+
+                                <div class="pricing-card" style="border: 2px solid var(--corporate-blue);">
+                                    <h4>Career Accelerator</h4>
+                                    <div class="price">$1197 <span>one-time payment</span></div>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-check"></i> Everything in Standard Access</li>
+                                        <li><i class="fas fa-check"></i> 4x 1-on-1 mentorship sessions</li>
+                                        <li><i class="fas fa-check"></i> Portfolio project review & feedback</li>
+                                        <li><i class="fas fa-check"></i> Priority support via chat & email</li>
+                                        <li><i class="fas fa-check"></i> Access to AI/ML job board & career resources</li>
+                                    </ul>
+                                    <button class="enroll-btn">Enroll Now</button>
+                                </div>
+                            </div>
+                            <p style="text-align: center; margin-top: 1rem;">Nonprofit and small business discounts available. <a href="#">Contact us</a> for details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="data-science-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('data-science-modal')">&times;</span>
+            <div class="course-slider">
+                <div class="slider-header">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Data Science & Analytics" class="slider-header-image">
+                    <div class="slider-overlay">
+                        <h2>Data Science & Analytics</h2>
+                        <div class="course-tags">
+                            <span class="course-tag">Data</span>
+                            <span class="course-tag">Analytics</span>
+                            <span class="course-tag">Statistics</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-body">
+                    <div class="slider-tabs">
+                        <button class="tab-btn active" onclick="openTab(event, 'data-science-overview')">Overview</button>
+                        <button class="tab-btn" onclick="openTab(event, 'data-science-curriculum')">Curriculum</button>
+                        <button class="tab-btn" onclick="openTab(event, 'data-science-instructor')">Instructor</button>
+                        <button class="tab-btn" onclick="openTab(event, 'data-science-pricing')">Pricing</button>
+                    </div>
+                    <div id="data-science-overview" class="tab-content active">
+                        <div class="course-details">
+                            <h3>Master Data Collection, Cleaning, Analysis, & Visualization</h3>
+                            <p>Become a data-driven decision-maker with our comprehensive Data Science & Analytics course. Learn the end-to-end process of working with data, from raw collection to insightful visualizations and statistical analysis using industry-standard tools and techniques.</p>
+                            <h4>What You'll Achieve</h4>
+                            <ul>
+                                <li>Acquire, clean, and transform messy datasets for analysis</li>
+                                <li>Perform exploratory data analysis (EDA) to uncover insights</li>
+                                <li>Apply statistical methods and hypothesis testing</li>
+                                <li>Create compelling data visualizations and dashboards</li>
+                                <li>Utilize Python libraries (Pandas, Matplotlib, Seaborn) for data manipulation and visualization</li>
+                            </ul>
+                            <div class="instructor-profile">
+                                <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Instructor" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h4>Dr. Anya Sharma</h4>
+                                    <p>Senior Data Scientist & Analytics Lead with 10+ years experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="data-science-curriculum" class="tab-content">
+                        <div class="course-details">
+                            <h3>Course Curriculum</h3>
+                            <p>Our 8-week rigorous program combines theoretical knowledge with extensive hands-on projects, preparing you for a career in data science.</p>
+                            <h4>Week 1: Introduction to Data Science & Python Basics</h4>
+                            <ul>
+                                <li>What is Data Science? Roles and responsibilities</li>
+                                <li>Setting up Python environment (Jupyter, VS Code)</li>
+                                <li>Python fundamentals for data science (data types, control flow)</li>
+                                <li>Introduction to NumPy for numerical operations</li>
+                            </ul>
+                            <h4>Week 2: Data Manipulation with Pandas</h4>
+                            <ul>
+                                <li>Loading and inspecting data (CSV, Excel, SQL)</li>
+                                <li>Data indexing, selection, and filtering</li>
+                                <li>Handling missing values and outliers</li>
+                                <li>Data merging, joining, and concatenation</li>
+                            </ul>
+                            <h4>Week 3: Exploratory Data Analysis (EDA)</h4>
+                            <ul>
+                                <li>Descriptive statistics and data summarization</li>
+                                <li>Visualizing data distributions (histograms, box plots)</li>
+                                <li>Correlation and covariance analysis</li>
+                                <li>Identifying patterns and anomalies</li>
+                            </ul>
+                            <h4>Week 4: Data Visualization with Matplotlib & Seaborn</h4>
+                            <ul>
+                                <li>Creating static and interactive plots</li>
+                                <li>Customizing charts for presentation</li>
+                                <li>Advanced visualization techniques (heatmaps, pair plots)</li>
+                                <li>Dashboard design principles</li>
+                            </ul>
+                            <h4>Week 5: Statistical Foundations for Data Science</h4>
+                            <ul>
+                                <li>Probability distributions</li>
+                                <li>Hypothesis testing (t-tests, ANOVA)</li>
+                                <li>Sampling and estimation</li>
+                                <li>Regression analysis (simple and multiple linear regression)</li>
+                            </ul>
+                            <h4>Week 6: Introduction to Machine Learning</h4>
+                            <ul>
+                                <li>Supervised vs. Unsupervised Learning</li>
+                                <li>Model training, validation, and testing</li>
+                                <li>Overfitting and regularization</li>
+                                <li>Introduction to Scikit-learn</li>
+                            </ul>
+                            <h4>Week 7: SQL for Data Science & Database Interaction</h4>
+                            <ul>
+                                <li>Relational databases and SQL basics</li>
+                                <li>Advanced SQL queries (joins, subqueries, aggregations)</li>
+                                <li>Connecting Python to databases</li>
+                                <li>ETL processes (Extract, Transform, Load)</li>
+                            </ul>
+                            <h4>Week 8: Big Data Concepts & Capstone Project</h4>
+                            <ul>
+                                <li>Introduction to Big Data ecosystems (Hadoop, Spark - conceptual)</li>
+                                <li>Cloud platforms for data science (AWS, Azure, GCP - overview)</li>
+                                <li>Building an end-to-end data science project</li>
+                                <li>Presenting your findings and insights</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="data-science-instructor" class="tab-content">
+                        <div class="course-details">
+                            <h3>Meet Your Instructor</h3>
+                            <div class="instructor-profile">
+                                <img src="https://randomuser.me/api/portraits/women/55.jpg" alt="Instructor" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h4>Dr. Anya Sharma</h4>
+                                    <p>Senior Data Scientist & Analytics Lead with 10+ years experience</p>
+                                </div>
+                            </div>
+                            <p style="margin-top: 1.5rem;">Dr. Anya Sharma is a highly experienced Senior Data Scientist and Analytics Lead with over a decade of hands-on experience in the field. Holding a Ph.D. in Statistics, Anya has a proven track record of extracting actionable insights from complex datasets for diverse industries, including finance, healthcare, and e-commerce. She is proficient in Python, R, SQL, and various data visualization tools.</p>
+                            <p>Anya's passion lies in mentoring aspiring data professionals. Her teaching style is highly practical, focusing on real-world case studies and industry best practices to ensure students gain immediately applicable skills. She is dedicated to making data science accessible and exciting for everyone.</p>
+                        </div>
+                    </div>
+                    <div id="data-science-pricing" class="tab-content">
+                        <div class="course-details">
+                            <h3>Pricing for Data Science & Analytics</h3>
+                            <div class="pricing-section">
+                                <div class="pricing-card">
+                                    <h4>Standard Access</h4>
+                                    <div class="price">$897 <span>one-time payment</span></div>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-check"></i> 8 Weeks Live Online Sessions</li>
+                                        <li><i class="fas fa-check"></i> Access to all course materials & code labs</li>
+                                        <li><i class="fas fa-check"></i> Hands-on data projects</li>
+                                        <li><i class="fas fa-check"></i> Certificate of Completion</li>
+                                        <li><i class="fas fa-check"></i> Email support</li>
+                                    </ul>
+                                    <button class="enroll-btn">Enroll Now</button>
+                                </div>
+
+                                <div class="pricing-card" style="border: 2px solid var(--corporate-blue);">
+                                    <h4>Career Accelerator</h4>
+                                    <div class="price">$1197 <span>one-time payment</span></div>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-check"></i> Everything in Standard Access</li>
+                                        <li><i class="fas fa-check"></i> 4x 1-on-1 mentorship sessions</li>
+                                        <li><i class="fas fa-check"></i> Capstone project review & guidance</li>
+                                        <li><i class="fas fa-check"></i> Priority support via chat & email</li>
+                                        <li><i class="fas fa-check"></i> Access to exclusive data science job resources</li>
+                                    </ul>
+                                    <button class="enroll-btn">Enroll Now</button>
+                                </div>
+                            </div>
+                            <p style="text-align: center; margin-top: 1rem;">Nonprofit and small business discounts available. <a href="#">Contact us</a> for details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cloud-computing-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('cloud-computing-modal')">&times;</span>
+            <div class="course-slider">
+                <div class="slider-header">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80" alt="Cloud Computing Essentials" class="slider-header-image">
+                    <div class="slider-overlay">
+                        <h2>Cloud Computing Essentials (AWS/Azure)</h2>
+                        <div class="course-tags">
+                            <span class="course-tag">Cloud</span>
+                            <span class="course-tag">AWS</span>
+                            <span class="course-tag">Azure</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-body">
+                    <div class="slider-tabs">
+                        <button class="tab-btn active" onclick="openTab(event, 'cloud-computing-overview')">Overview</button>
+                        <button class="tab-btn" onclick="openTab(event, 'cloud-computing-curriculum')">Curriculum</button>
+                        <button class="tab-btn" onclick="openTab(event, 'cloud-computing-instructor')">Instructor</button>
+                        <button class="tab-btn" onclick="openTab(event, 'cloud-computing-pricing')">Pricing</button>
+                    </div>
+                    <div id="cloud-computing-overview" class="tab-content active">
+                        <div class="course-details">
+                            <h3>Gain Practical Skills in Cloud Services & Infrastructure Deployment</h3>
+                            <p>Our Cloud Computing Essentials course provides a foundational understanding of cloud platforms, focusing on popular services from Amazon Web Services (AWS) and Microsoft Azure. Learn to deploy, manage, and scale applications in the cloud, preparing you for cloud-centric roles.</p>
+                            <h4>What You'll Achieve</h4>
+                            <ul>
+                                <li>Understand fundamental cloud concepts (IaaS, PaaS, SaaS) and deployment models</li>
+                                <li>Navigate and utilize core services in AWS (EC2, S3, VPC)</li>
+                                <li>Explore key services in Azure (Virtual Machines, Blob Storage, Virtual Network)</li>
+                                <li>Implement basic cloud security best practices</li>
+                                <li>Prepare for entry-level cloud certifications (e.g., AWS Cloud Practitioner, Azure Fundamentals)</li>
+                            </ul>
+                            <div class="instructor-profile">
+                                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Instructor" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h4>Engr. Michael Brown</h4>
+                                    <p>Certified Cloud Architect (AWS & Azure) with 10+ years experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cloud-computing-curriculum" class="tab-content">
+                        <div class="course-details">
+                            <h3>Course Curriculum</h3>
+                            <p>Our 6-week practical course provides hands-on experience with both AWS and Azure, giving you a dual-cloud perspective.</p>
+                            <h4>Week 1: Introduction to Cloud Computing</h4>
+                            <ul>
+                                <li>What is cloud computing? Benefits and challenges</li>
+                                <li>Cloud service models (IaaS, PaaS, SaaS)</li>
+                                <li>Cloud deployment models (public, private, hybrid)</li>
+                                <li>Introduction to AWS and Azure ecosystems</li>
+                                <li>Shared responsibility model</li>
+                            </ul>
+                            <h4>Week 2: AWS Core Services - Compute & Storage</h4>
+                            <ul>
+                                <li>Amazon EC2 (Elastic Compute Cloud) - virtual servers</li>
+                                <li>Amazon S3 (Simple Storage Service) - object storage</li>
+                                <li>EBS (Elastic Block Store) and instance storage</li>
+                                <li>AWS Identity and Access Management (IAM) basics</li>
+                            </ul>
+                            <h4>Week 3: AWS Networking & Databases</h4>
+                            <ul>
+                                <li>Amazon VPC (Virtual Private Cloud) - networking fundamentals</li>
+                                <li>Subnets, Route Tables, Security Groups, NACLs</li>
+                                <li>Introduction to Amazon RDS (Relational Database Service)</li>
+                                <li>Amazon DynamoDB (NoSQL database)</li>
+                            </ul>
+                            <h4>Week 4: Azure Core Services - Compute & Storage</h4>
+                            <ul>
+                                <li>Azure Virtual Machines (VMs) - virtual servers</li>
+                                <li>Azure Blob Storage - object storage</li>
+                                <li>Azure Disks and File Storage</li>
+                                <li>Azure Active Directory (AAD) basics</li>
+                            </ul>
+                            <h4>Week 5: Azure Networking & Databases</h4>
+                            <ul>
+                                <li>Azure Virtual Network (VNet) - networking fundamentals</li>
+                                <li>Subnets, Network Security Groups (NSGs)</li>
+                                <li>Azure SQL Database and Azure Cosmos DB</li>
+                                <li>Introduction to Azure App Service</li>
+                            </ul>
+                            <h4>Week 6: Cloud Management, Monitoring & Cost</h4>
+                            <ul>
+                                <li>Cloud monitoring (AWS CloudWatch, Azure Monitor)</li>
+                                <li>Cost management and optimization strategies</li>
+                                <li>Introduction to serverless computing (AWS Lambda, Azure Functions)</li>
+                                <li>Disaster recovery and high availability in the cloud</li>
+                                <li>Preparing for cloud certifications</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="cloud-computing-instructor" class="tab-content">
+                        <div class="course-details">
+                            <h3>Meet Your Instructor</h3>
+                            <div class="instructor-profile">
+                                <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Instructor" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h4>Engr. Michael Brown</h4>
+                                    <p>Certified Cloud Architect (AWS & Azure) with 10+ years experience</p>
+                                </div>
+                            </div>
+                            <p style="margin-top: 1.5rem;">Engr. Michael Brown is a highly respected Cloud Architect with over a decade of experience designing, deploying, and managing scalable cloud solutions on both AWS and Microsoft Azure. He holds multiple advanced certifications from both platforms and has a proven track record of helping organizations migrate to and optimize their presence in the cloud.</p>
+                            <p>Michael's teaching philosophy emphasizes practical, hands-on learning, enabling students to gain real-world skills that are immediately applicable in cloud environments. He is dedicated to making complex cloud concepts understandable and building the confidence of aspiring cloud professionals.</p>
+                        </div>
+                    </div>
+                    <div id="cloud-computing-pricing" class="tab-content">
+                        <div class="course-details">
+                            <h3>Pricing for Cloud Computing Essentials</h3>
+                            <div class="pricing-section">
+                                <div class="pricing-card">
+                                    <h4>Standard Access</h4>
+                                    <div class="price">$697 <span>one-time payment</span></div>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-check"></i> 6 Weeks Live Online Sessions</li>
+                                        <li><i class="fas fa-check"></i> Access to all course materials & labs</li>
+                                        <li><i class="fas fa-check"></i> Hands-on cloud deployment exercises</li>
+                                        <li><i class="fas fa-check"></i> Certificate of Completion</li>
+                                        <li><i class="fas fa-check"></i> Email support</li>
+                                    </ul>
+                                    <button class="enroll-btn">Enroll Now</button>
+                                </div>
+
+                                <div class="pricing-card" style="border: 2px solid var(--corporate-blue);">
+                                    <h4>Professional Package</h4>
+                                    <div class="price">$947 <span>one-time payment</span></div>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-check"></i> Everything in Standard Access</li>
+                                        <li><i class="fas fa-check"></i> 2x 1-on-1 career coaching sessions</li>
+                                        <li><i class="fas fa-check"></i> Priority support via chat & email</li>
+                                        <li><i class="fas fa-check"></i> Lifetime access to course updates & new lab modules</li>
+                                        <li><i class="fas fa-check"></i> Access to private cloud community forum</li>
+                                    </ul>
+                                    <button class="enroll-btn">Enroll Now</button>
+                                </div>
+                            </div>
+                            <p style="text-align: center; margin-top: 1rem;">Nonprofit and small business discounts available. <a href="#">Contact us</a> for details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="web-dev-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('web-dev-modal')">&times;</span>
+            <div class="course-slider">
+                <div class="slider-header">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80" alt="Web Development" class="slider-header-image">
+                    <div class="slider-overlay">
+                        <h2>Web Development (Frontend & Backend)</h2>
+                        <div class="course-tags">
+                            <span class="course-tag">Frontend</span>
+                            <span class="course-tag">Backend</span>
+                            <span class="course-tag">Fullstack</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-body">
+                    <div class="slider-tabs">
+                        <button class="tab-btn active" onclick="openTab(event, 'web-dev-overview')">Overview</button>
+                        <button class="tab-btn" onclick="openTab(event, 'web-dev-curriculum')">Curriculum</button>
+                        <button class="tab-btn" onclick="openTab(event, 'web-dev-instructor')">Instructor</button>
+                        <button class="tab-btn" onclick="openTab(event, 'web-dev-pricing')">Pricing</button>
+                    </div>
+                    <div id="web-dev-overview" class="tab-content active">
+                        <div class="course-details">
+                            <h3>Master HTML, CSS, JavaScript for Frontend & Server-Side Programming for Backend</h3>
+                            <p>Become a versatile web developer capable of building dynamic and responsive websites from scratch. This comprehensive course covers both frontend (user interface) and backend (server-side logic, databases) development, equipping you with the skills to become a full-stack developer.</p>
+                            <h4>What You'll Achieve</h4>
+                            <ul>
+                                <li>Build responsive and interactive user interfaces with HTML, CSS, and JavaScript</li>
+                                <li>Understand and implement modern frontend frameworks (e.g., React, Vue, Angular - conceptually)</li>
+                                <li>Develop server-side logic using popular backend technologies (e.g., Node.js, Python/Flask/Django - conceptually)</li>
+                                <li>Work with databases to store and retrieve application data</li>
+                                <li>Deploy full-stack web applications to live servers</li>
+                            </ul>
+                            <div class="instructor-profile">
+                                <img src="https://randomuser.me/api/portraits/men/70.jpg" alt="Instructor" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h4>Dr. Chris Lee</h4>
+                                    <p>Full-Stack Web Developer & Tech Lead with 10+ years experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="web-dev-curriculum" class="tab-content">
+                        <div class="course-details">
+                            <h3>Course Curriculum</h3>
+                            <p>Our 10-week immersive program provides a balanced approach to frontend and backend development, with extensive hands-on projects.</p>
+                            <h4>Week 1: HTML5 & CSS3 Fundamentals</h4>
+                            <ul>
+                                <li>Structuring web pages with HTML5</li>
+                                <li>Styling with CSS3 (selectors, box model, flexbox, grid)</li>
+                                <li>Responsive web design principles</li>
+                                <li>Introduction to Bootstrap framework</li>
+                            </ul>
+                            <h4>Week 2: JavaScript Basics & DOM Manipulation</h4>
+                            <ul>
+                                <li>Variables, data types, operators, control flow</li>
+                                <li>Functions and arrays</li>
+                                <li>Interacting with the Document Object Model (DOM)</li>
+                                <li>Event handling</li>
+                            </ul>
+                            <h4>Week 3: Advanced JavaScript & ES6+</h4>
+                            <ul>
+                                <li>Asynchronous JavaScript (Promises, Async/Await)</li>
+                                <li>Arrow functions, destructuring, spread/rest operators</li>
+                                <li>Modules and classes</li>
+                                <li>Introduction to modern JavaScript toolchains (Webpack, Babel - conceptual)</li>
+                            </ul>
+                            <h4>Week 4: Frontend Frameworks - React Introduction (Conceptual)</h4>
+                            <ul>
+                                <li>Why use a frontend framework?</li>
+                                <li>Components, props, and state</li>
+                                <li>Basic React application structure</li>
+                                <li>(Note: This week provides a high-level overview, not in-depth React development)</li>
+                            </ul>
+                            <h4>Week 5: Backend Fundamentals - Node.js & Express.js</h4>
+                            <ul>
+                                <li>Introduction to Node.js and npm</li>
+                                <li>Building RESTful APIs with Express.js</li>
+                                <li>Middleware and routing</li>
+                                <li>Handling HTTP requests and responses</li>
+                            </ul>
+                            <h4>Week 6: Database Integration - MongoDB & Mongoose</h4>
+                            <ul>
+                                <li>Introduction to NoSQL databases</li>
+                                <li>Setting up MongoDB</li>
+                                <li>Interacting with MongoDB using Mongoose (ODM for Node.js)</li>
+                                <li>CRUD operations</li>
+                            </ul>
+                            <h4>Week 7: User Authentication & Authorization</h4>
+                            <ul>
+                                <li>Implementing user registration and login</li>
+                                <li>Password hashing (Bcrypt)</li>
+                                <li>JSON Web Tokens (JWT) for authentication</li>
+                                <li>Protecting routes and resources</li>
+                            </ul>
+                            <h4>Week 8: Advanced Backend & API Concepts</h4>
+                            <ul>
+                                <li>Error handling and logging</li>
+                                <li>Advanced API design principles</li>
+                                <li>Integrating third-party APIs</li>
+                                <li>File uploads and handling</li>
+                            </ul>
+                            <h4>Week 9: Deployment & Hosting</h4>
+                            <ul>
+                                <li>Preparing your application for deployment</li>
+                                <li>Introduction to cloud hosting platforms (Heroku, Netlify, Vercel, AWS S3/EC2 - conceptual)</li>
+                                <li>Domain names and SSL certificates</li>
+                                <li>Continuous Integration/Continuous Deployment (CI/CD) basics</li>
+                            </ul>
+                            <h4>Week 10: Full-Stack Project & Best Practices</h4>
+                            <ul>
+                                <li>Building a complete full-stack web application</li>
+                                <li>Code organization and modularity</li>
+                                <li>Testing strategies (unit, integration - conceptual)</li>
+                                <li>Performance optimization</li>
+                                <li>Career guidance for web developers</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="web-dev-instructor" class="tab-content">
+                        <div class="course-details">
+                            <h3>Meet Your Instructor</h3>
+                            <div class="instructor-profile">
+                                <img src="https://randomuser.me/api/portraits/men/70.jpg" alt="Instructor" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h4>Dr. Chris Lee</h4>
+                                    <p>Full-Stack Web Developer & Tech Lead with 10+ years experience</p>
+                                </div>
+                            </div>
+                            <p style="margin-top: 1.5rem;">Dr. Chris Lee is a seasoned Full-Stack Web Developer and Tech Lead with over a decade of experience building robust and scalable web applications. He holds a Ph.D. in Computer Science and has a deep understanding of both frontend and backend technologies, including modern JavaScript frameworks, Node.js, Python, and various databases.</p>
+                            <p>Chris is passionate about teaching and simplifying complex web development concepts. His courses are renowned for their hands-on approach, enabling students to gain practical skills and build impressive portfolios. He is dedicated to guiding aspiring developers through the entire web development lifecycle.</p>
+                        </div>
+                    </div>
+                    <div id="web-dev-pricing" class="tab-content">
+                        <div class="course-details">
+                            <h3>Pricing for Web Development (Frontend & Backend)</h3>
+                            <div class="pricing-section">
+                                <div class="pricing-card">
+                                    <h4>Standard Access</h4>
+                                    <div class="price">$997 <span>one-time payment</span></div>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-check"></i> 10 Weeks Live Online Sessions</li>
+                                        <li><i class="fas fa-check"></i> Access to all course materials & code examples</li>
+                                        <li><i class="fas fa-check"></i> Weekly coding challenges & projects</li>
+                                        <li><i class="fas fa-check"></i> Certificate of Completion</li>
+                                        <li><i class="fas fa-check"></i> Email support</li>
+                                    </ul>
+                                    <button class="enroll-btn">Enroll Now</button>
+                                </div>
+
+                                <div class="pricing-card" style="border: 2px solid var(--corporate-blue);">
+                                    <h4>Pro Developer Package</h4>
+                                    <div class="price">$1497 <span>one-time payment</span></div>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-check"></i> Everything in Standard Access</li>
+                                        <li><i class="fas fa-check"></i> 5x 1-on-1 code review & mentorship sessions</li>
+                                        <li><i class="fas fa-check"></i> Dedicated priority support via chat & email</li>
+                                        <li><i class="fas fa-check"></i> Lifetime access to course updates & new modules</li>
+                                        <li><i class="fas fa-check"></i> Portfolio development & job placement assistance</li>
+                                    </ul>
+                                    <button class="enroll-btn">Enroll Now</button>
+                                </div>
+                            </div>
+                            <p style="text-align: center; margin-top: 1rem;">Nonprofit and small business discounts available. <a href="#">Contact us</a> for details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="digital-marketing-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('digital-marketing-modal')">&times;</span>
+            <div class="course-slider">
+                <div class="slider-header">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Digital Marketing Strategist" class="slider-header-image">
+                    <div class="slider-overlay">
+                        <h2>Digital Marketing Strategist</h2>
+                        <div class="course-tags">
+                            <span class="course-tag">Marketing</span>
+                            <span class="course-tag">SEO</span>
+                            <span class="course-tag">Social Media</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-body">
+                    <div class="slider-tabs">
+                        <button class="tab-btn active" onclick="openTab(event, 'digital-marketing-overview')">Overview</button>
+                        <button class="tab-btn" onclick="openTab(event, 'digital-marketing-curriculum')">Curriculum</button>
+                        <button class="tab-btn" onclick="openTab(event, 'digital-marketing-instructor')">Instructor</button>
+                        <button class="tab-btn" onclick="openTab(event, 'digital-marketing-pricing')">Pricing</button>
+                    </div>
+                    <div id="digital-marketing-overview" class="tab-content active">
+                        <div class="course-details">
+                            <h3>Master SEO, SEM, Social Media, Content Creation, & Analytics</h3>
+                            <p>Become a holistic digital marketing professional with our comprehensive strategist course. Learn to drive online visibility, engage audiences, and convert leads through various digital channels, mastering the tools and techniques essential for modern marketing success.</p>
+                            <h4>What You'll Achieve</h4>
+                            <ul>
+                                <li>Develop effective SEO strategies to rank higher in search results</li>
+                                <li>Run successful paid advertising campaigns (Google Ads, Social Media Ads)</li>
+                                <li>Create engaging content and manage social media presence</li>
+                                <li>Utilize analytics tools to measure campaign performance and derive insights</li>
+                                <li>Formulate integrated digital marketing strategies</li>
+                            </ul>
+                            <div class="instructor-profile">
+                                <img src="https://randomuser.me/api/portraits/women/75.jpg" alt="Instructor" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h4>Dr. Emily White</h4>
+                                    <p>Digital Marketing Consultant & Strategist with 12+ years experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="digital-marketing-curriculum" class="tab-content">
+                        <div class="course-details">
+                            <h3>Course Curriculum</h3>
+                            <p>Our 6-week immersive program covers the essential pillars of digital marketing, with practical assignments and real-world case studies.</p>
+                            <h4>Week 1: Digital Marketing Fundamentals & Strategy</h4>
+                            <ul>
+                                <li>Introduction to digital marketing ecosystem</li>
+                                <li>Defining target audience and buyer personas</li>
+                                <li>Setting digital marketing goals and KPIs</li>
+                                <li>Creating a comprehensive digital marketing strategy</li>
+                                <li>Competitor analysis</li>
+                            </ul>
+                            <h4>Week 2: Search Engine Optimization (SEO)</h4>
+                            <ul>
+                                <li>On-page SEO (keyword research, content optimization)</li>
+                                <li>Technical SEO (site speed, mobile-friendliness, sitemaps)</li>
+                                <li>Off-page SEO (link building, local SEO)</li>
+                                <li>Monitoring SEO performance (Google Search Console)</li>
+                            </ul>
+                            <h4>Week 3: Search Engine Marketing (SEM) & PPC</h4>
+                            <ul>
+                                <li>Introduction to Google Ads and paid search</li>
+                                <li>Keyword bidding strategies</li>
+                                <li>Ad copy creation and optimization</li>
+                                <li>Display and remarketing campaigns</li>
+                                <li>Budgeting and campaign management</li>
+                            </ul>
+                            <h4>Week 4: Social Media Marketing & Content Creation</h4>
+                            <ul>
+                                <li>Developing a social media strategy</li>
+                                <li>Platform-specific best practices (Facebook, Instagram, LinkedIn, X)</li>
+                                <li>Content planning and calendar creation</li>
+                                <li>Visual content creation tools</li>
+                                <li>Influencer marketing basics</li>
+                            </ul>
+                            <h4>Week 5: Email Marketing & Analytics</h4>
+                            <ul>
+                                <li>Building email lists and segmentation</li>
+                                <li>Designing effective email campaigns</li>
+                                <li>A/B testing and optimization</li>
+                                <li>Google Analytics fundamentals (audience, acquisition, behavior, conversion)</li>
+                                <li>Reporting and interpreting data</li>
+                            </ul>
+                            <h4>Week 6: Advanced Digital Marketing & Future Trends</h4>
+                            <ul>
+                                <li>Marketing automation concepts</li>
+                                <li>Video marketing and YouTube SEO</li>
+                                <li>Mobile marketing strategies</li>
+                                <li>Emerging digital marketing trends (AI in marketing, voice search)</li>
+                                <li>Developing a career path in digital marketing</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="digital-marketing-instructor" class="tab-content">
+                        <div class="course-details">
+                            <h3>Meet Your Instructor</h3>
+                            <div class="instructor-profile">
+                                <img src="https://randomuser.me/api/portraits/women/75.jpg" alt="Instructor" class="instructor-avatar">
+                                <div class="instructor-info">
+                                    <h4>Dr. Emily White</h4>
+                                    <p>Digital Marketing Consultant & Strategist with 12+ years experience</p>
+                                </div>
+                            </div>
+                            <p style="margin-top: 1.5rem;">Dr. Emily White is a highly sought-after Digital Marketing Consultant and Strategist with over 12 years of experience leading successful online campaigns for global brands. She holds a Ph.D. in Marketing and specializes in integrated digital strategies, combining SEO, SEM, social media, and content marketing for maximum impact.</p>
+                            <p>Emily's teaching approach is dynamic and results-oriented. She brings real-world examples and cutting-edge insights into the classroom, ensuring her students are equipped with the practical skills needed to excel in the fast-paced digital marketing landscape. She is passionate about empowering marketers to achieve measurable success.</p>
+                        </div>
+                    </div>
+                    <div id="digital-marketing-pricing" class="tab-content">
+                        <div class="course-details">
+                            <h3>Pricing for Digital Marketing Strategist</h3>
+                            <div class="pricing-section">
+                                <div class="pricing-card">
+                                    <h4>Standard Access</h4>
+                                    <div class="price">$697 <span>one-time payment</span></div>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-check"></i> 6 Weeks Live Online Sessions</li>
+                                        <li><i class="fas fa-check"></i> Access to all course materials & case studies</li>
+                                        <li><i class="fas fa-check"></i> Practical marketing campaign assignments</li>
+                                        <li><i class="fas fa-check"></i> Certificate of Completion</li>
+                                        <li><i class="fas fa-check"></i> Email support</li>
+                                    </ul>
+                                    <button class="enroll-btn">Enroll Now</button>
+                                </div>
+
+                                <div class="pricing-card" style="border: 2px solid var(--corporate-blue);">
+                                    <h4>Advanced Strategist</h4>
+                                    <div class="price">$947 <span>one-time payment</span></div>
+                                    <ul class="course-features">
+                                        <li><i class="fas fa-check"></i> Everything in Standard Access</li>
+                                        <li><i class="fas fa-check"></i> 2x 1-on-1 strategy review sessions</li>
+                                        <li><i class="fas fa-check"></i> Priority support via chat & email</li>
+                                        <li><i class="fas fa-check"></i> Lifetime access to course updates & new tools</li>
+                                        <li><i class="fas fa-check"></i> Access to exclusive digital marketing resource library</li>
+                                    </ul>
+                                    <button class="enroll-btn">Enroll Now</button>
+                                </div>
+                            </div>
+                            <p style="text-align: center; margin-top: 1rem;">Nonprofit and small business discounts available. <a href="#">Contact us</a> for details.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>FutureTech Academy</h3>
+                    <p>Your gateway to high-demand ICT and business productivity skills. Empowering professionals with practical, industry-relevant training.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#" data-bs-toggle="modal" data-bs-target="#registrationModal">Register</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Popular Courses</h3>
+                    <ul>
+                        <li><a href="#" onclick="openCourseModal('excel')">Advanced Excel</a></li>
+                        <li><a href="#" onclick="openCourseModal('cybersecurity')">Cybersecurity</a></li>
+                        <li><a href="#" onclick="openCourseModal('data-science')">Data Science</a></li>
+                        <li><a href="#" onclick="openCourseModal('web-dev')">Web Development</a></li>
+                        <li><a href="#" onclick="openCourseModal('digital-marketing')">Digital Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 15 Miles Off Kabwe Rd, Lusaka</li>
+                        <li><i class="fas fa-phone"></i> +260978319400</li>
+                        <li><i class="fas fa-envelope"></i> info@futuretechacademy.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 8AM - 5PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FutureTech Academy. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Team Slider Functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.team-member');
+        const dots = document.querySelectorAll('.slider-dot');
+        const totalSlides = slides.length;
+        let slideInterval;
+
+        function showSlide(index) {
+            // Wrap around if at beginning or end
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+            // Update slide position
+            document.querySelector('.team-slides').style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            // Update active dot
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function startSlider() {
+            slideInterval = setInterval(nextSlide, 10000); // Change slide every 10 seconds
+        }
+
+        // Initialize slider function
+        function initSlider() {
+            // Set up dot navigation
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(slideInterval);
+                    showSlide(index);
+                    startSlider();
+                });
+            });
+            startSlider();
+        }
+
+        // --- Custom Modal Functionality for Course Details ---
+
+        function openCourseModal(courseId) {
+            // Hide any currently open Bootstrap modals (like the registration modal)
+            const openBsModal = document.querySelector('.modal.show');
+            if (openBsModal) {
+                const bsModal = bootstrap.Modal.getInstance(openBsModal);
+                if (bsModal) bsModal.hide();
+            }
+
+            // Hide all custom course modals first
+            const allCourseModals = document.querySelectorAll('.modal:not(.fade)');
+            allCourseModals.forEach(modal => {
+                modal.style.display = 'none';
+            });
+
+            // Show the specific course modal
+            const modal = document.getElementById(courseId + '-modal');
+            if (modal) {
+                modal.style.display = 'flex'; // Use flex to center the modal content
+                // Reset to first tab (Overview) and activate it
+                const firstTabButton = modal.querySelector('.tab-btn');
+                const firstTabContent = modal.querySelector('.tab-content');
+
+                if (firstTabButton && firstTabContent) {
+                    // Deactivate all tabs first
+                    modal.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                    modal.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+                    // Activate the first tab
+                    firstTabButton.classList.add('active');
+                    firstTabContent.classList.add('active');
+                }
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const allCourseModals = document.querySelectorAll('.modal:not(.fade)');
+            allCourseModals.forEach(modal => {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        }
+
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tab-content" and hide them
+            tabcontent = evt.currentTarget.closest('.slider-body').querySelectorAll('.tab-content');
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove('active');
+            }
+
+            // Get all elements with class="tab-btn" and remove the class "active"
+            tablinks = evt.currentTarget.closest('.slider-tabs').querySelectorAll('.tab-btn');
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove('active');
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initSlider();
+
+            // Form submission handling for the registration modal
+            document.getElementById('courseRegistrationForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your registration! We will contact you shortly with more details.');
+                this.reset();
+                // Close the modal
+                const modal = bootstrap.Modal.getInstance(document.getElementById('registrationModal'));
+                modal.hide();
+            });
+        });
+    </script>
+</body>
+</html>
